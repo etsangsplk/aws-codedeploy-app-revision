@@ -1,0 +1,19 @@
+version: 0.0
+
+os: linux
+files:
+   - source: /
+     destination: /aws.services/codedeploy/scripts/asg.deployment
+hooks:
+   BeforeInstall:
+   - location: aws.codedeploy.stages/01-beforeInstall.cmds.sh
+     runas: root
+   AfterInstall:
+   - location: aws.codedeploy.stages/02-afterInstall.cmds.sh
+     runas: root
+   ApplicationStart:
+   - location: aws.codedeploy.stages/03-applicationStart.cmds.sh
+     runas: root
+   ValidateService:
+   - location: aws.codedeploy.stages/04-validateService.cmds.sh
+     runas: root

@@ -28,7 +28,7 @@ echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 echo "Cloning bridgemanart/AWS.CodeDeploy.Scripts.git Repo.." >> /aws.services/codedeploy/logs/latestDeployment.logs
 cd /aws.services/codedeploy
 rm -rf AWS.CodeDeploy.Scripts/
-git clone git@github.com:bridgemanart/AWS.CodeDeploy.Scripts.git || die "Unable to Clone bridgemanart/AWS.CodeDeploy.Scripts.git"
+git clone git@github.com:gfisaris/aws-ec2-instance-provision-scripts.git || die "Unable to Clone bridgemanart/AWS.CodeDeploy.Scripts.git"
 chmod -R 777 AWS.CodeDeploy.Scripts/
 
 echo "FINISH | Executing All Commands part of the "Before-Install" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs

@@ -6,7 +6,7 @@ die() {
     exit 1
 }
 
-while ! [ -f /tmp/cloud-init.running ];
+while [ -f /tmp/cloud-init.running ];
 do
     echo "## Cloud-Initialization still running.."
     echo "## Check again in 5 seconds.."

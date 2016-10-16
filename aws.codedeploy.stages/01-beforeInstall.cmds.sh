@@ -30,7 +30,7 @@ echo "## Create File: latestDeployment.logs"
 
 ## CodeDeploy LifeCycle: "Before Install"
 
-echo "## START "Before-Install" LifeCycle"
+echo "## START CodeDeploy LifeCycle: \"Before Install\""
 
 echo "## Coping and Applying SSHd Configuration From S3.Bucket FOR Root User"
     rm -rf ~/.ssh
@@ -53,4 +53,4 @@ echo "## Cloning Git Repo: aws-ec2-instance-provision-scripts"
     git clone git@github.com:gfisaris/aws-ec2-instance-provision-scripts.git /aws.services/codedeploy/ || die "Unable to Clone GIT Repository"
     chmod -R 777 aws-ec2-instance-provision-scripts/
 
-echo "## FINISH "Before-Install" LifeCycle.."
+echo "## END CodeDeploy LifeCycle: \"Before Install\""

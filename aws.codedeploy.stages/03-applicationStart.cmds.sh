@@ -6,7 +6,6 @@ die() {
     exit 1
 }
 
-echo "START | Executing all Commands that are part of "Application-Start" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
-cd /aws.services/codedeploy/AWS.CodeDeploy.Scripts
-sh execute.application.start.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
-echo "FINISH | Executing all Commands that are part of "Application-Start" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
+echo "START "Application-Start" LifeCycle.."
+    bash /aws.services/codedeploy/aws-ec2-instance-provision-scripts/execute.application-start.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
+echo "FINISH "Application-Start" LifeCycle.."

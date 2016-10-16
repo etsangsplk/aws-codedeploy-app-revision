@@ -5,6 +5,16 @@ die() {
     echo "Aborting Deployment.." 1>&2
     exit 1
 }
+
+while ! [ -f /tmp/cloud-init.running ];
+do
+    echo "## Cloud-Initialization still running.."
+    echo "## Check again in 5 seconds.."
+    sleep 5
+done
+echo "## Cloud-Initialization finished.."
+
+
 mkdir -p /aws.services/codedeploy/logs
 touch /aws.services/codedeploy/logs/latestDeployment.logs
 chmod 777 /aws.services/codedeploy/logs/latestDeployment.logs

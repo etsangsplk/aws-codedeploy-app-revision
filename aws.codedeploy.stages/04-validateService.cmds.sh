@@ -6,7 +6,6 @@ die() {
     exit 1
 }
 
-echo "START | Executing all Commands that are part of "Validate-Service" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
-cd /aws.services/codedeploy/AWS.CodeDeploy.Scripts
-sh execute.validate.service.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
-echo "FINISH | Executing all Commands that are part of "Validate-Service" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
+echo "START CodeDeploy LifeCycle: \"Validate Service\""
+    bash /aws.services/codedeploy/aws-ec2-instance-provision-scripts/execute.validate-service.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
+echo "END CodeDeploy LifeCycle: \"Validate Service\""

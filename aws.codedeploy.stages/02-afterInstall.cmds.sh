@@ -6,6 +6,6 @@ die() {
     exit 1
 }
 
-echo "## START "After-Install" LifeCycle.."
+echo "## START CodeDeploy LifeCycle: \"After Install\""
     bash /aws.services/codedeploy/aws-ec2-instance-provision-scripts/execute.after-install.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
-echo "## FINISH "After-Install" LifeCycle.."
+echo "## END CodeDeploy LifeCycle: \"After Install \""

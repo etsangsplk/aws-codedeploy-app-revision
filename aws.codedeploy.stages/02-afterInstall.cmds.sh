@@ -6,7 +6,6 @@ die() {
     exit 1
 }
 
-echo "START | Executing all Commands that are part of "After-Install" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
-cd /aws.services/codedeploy/AWS.CodeDeploy.Scripts
-sh execute.after.install.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
-echo "FINISH | Executing all Commands that are part of "After-Install" LifeCycle.." >> /aws.services/codedeploy/logs/latestDeployment.logs
+echo "## START "After-Install" LifeCycle.."
+bash /aws.services/codedeploy/AWS.CodeDeploy.Scripts/execute.after-install.cmds.sh || die "Execution of a Command Failed! Please check Deployment logs for more informations.."
+echo "## FINISH "After-Install" LifeCycle.."

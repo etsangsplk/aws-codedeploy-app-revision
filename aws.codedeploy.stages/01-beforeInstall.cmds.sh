@@ -46,11 +46,18 @@ echo "## Coping and Applying SSHd Configuration From S3.Bucket FOR Root User"
 echo "## Delete, if any, pre-existing Folder: aws-ec2-instance-provision-scripts"
     if [ -d "/aws.services/codedeploy/aws-ec2-instance-provision-scripts" ];
         then
-            rm -rf /aws.services/codedeploy/laws-ec2-instance-provision-scripts
+            rm -rf /aws.services/codedeploy/aws-ec2-instance-provision-scripts
     fi
+    
+echo "## Create Folder (/aws.services/codedeploy/aws-ec2-instance-provision-scripts)"
+    mkdir -p /aws.services/codedeploy/aws-ec2-instance-provision-scripts
 
 echo "## Cloning Git Repo: aws-ec2-instance-provision-scripts"
-    git clone git@github.com:gfisaris/aws-ec2-instance-provision-scripts.git /aws.services/codedeploy/ || die "Unable to Clone GIT Repository"
+    git clone -v \
+        git@github.com:gfisaris/aws-ec2-instance-provision-scripts.git  \
+        /aws.services/codedeploy/aws-ec2-instance-provision-scripts     \
+        || die "Unable to Clone GIT Repository"
+        
     chmod -R 777 aws-ec2-instance-provision-scripts/
 
 echo "## END CodeDeploy LifeCycle: \"Before Install\""

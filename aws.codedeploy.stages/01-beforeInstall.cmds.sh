@@ -35,7 +35,7 @@ echo "## START CodeDeploy LifeCycle: \"Before Install\""
 echo "## Coping and Applying SSHd Configuration From S3.Bucket FOR Root User"
     rm -rf ~/.ssh
     mkdir -p ~/.ssh
-    aws s3 cp s3://global.general/SSH.Config.Files/.ssh/ ~/.ssh/ || die "Unable to Copy SSHd Config Files from S3.Bucket"
+    aws s3 sync s3://global.general/SSH.Config.Files/.ssh/ ~/.ssh/ || die "Unable to Copy SSHd Config Files from S3.Bucket"
     chmod 775 ~/.ssh
     chmod 600 ~/.ssh/*
     eval "$(ssh-agent -s)"
